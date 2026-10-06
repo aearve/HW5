@@ -14,8 +14,7 @@ Using `games.csv` and `games2.csv` on hpc-student.charlotte.edu, inside
 ## Part 2 (40 pts) - Play animation
 
 Animation of play 2735 from game 2022100210 (PIT @ NYJ, Week 4, 2022 season -
-Breece Hall rush up the middle for 5 yards, Q3 1st down), built from tracking
-data in the same BigDataBowl_2024 folder on student.
+Breece Hall rush up the middle for 5 yards, Q3 1st down).
 
 - [`part2_extraction_commands.txt`](./part2_extraction_commands.txt) - commands used to
   locate the game/play and extract its tracking rows
