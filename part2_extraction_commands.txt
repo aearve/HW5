@@ -1,0 +1,29 @@
+HW5 - Part 2: commands run on hpc-student.charlotte.edu to locate and extract the data for
+game 2022100210, play 2735, before running animate_play.py
+
+All run from: /projects/class/spoa4001_u01/SportsTrackingTransformer/data/BigDataBowl_2024
+
+$ grep "2022100210" games.csv
+2022100210,2022,4,"10/02/2022","13:00:00","PIT","NYJ",20,24
+-> confirms the game is Week 4, 2022 season: Pittsburgh @ NY Jets -> tracking data lives in
+   tracking_week_4.csv
+
+$ grep "^2022100210,2735," plays.csv
+2022100210,2735,54501,Breece Hall,"(6:00) Br.Hall up the middle to PIT 47 for 5 yards (M.Adams, C.Wormley).",3,1,10,NYJ,PIT,NYJ,48,6:00,13,10,,NA,NA,5,5,N,58,SINGLEBACK,7,...
+-> play 2735: Breece Hall rush up the middle for 5 yards, Q3, 1st down
+
+$ grep "^2022100210,2735," tracking_week_4.csv | wc -l
+943
+-> 943 tracking rows for this play (23 tracked entities x 41 frames)
+
+Extracted just this play's rows (with header) into a small working file, run from inside the
+user's own home directory (~/hw5), referencing the class data folder by full path:
+
+$ (head -1 /projects/class/spoa4001_u01/SportsTrackingTransformer/data/BigDataBowl_2024/tracking_week_4.csv; \
+   grep "^2022100210,2735," /projects/class/spoa4001_u01/SportsTrackingTransformer/data/BigDataBowl_2024/tracking_week_4.csv) \
+   > play_2735_tracking.csv
+
+$ wc -l play_2735_tracking.csv
+944
+
+This play_2735_tracking.csv file is the input animate_play.py reads to build the gif.

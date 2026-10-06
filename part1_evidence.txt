@@ -1,0 +1,9 @@
+$ grep "LAC" games2.csv | grep "DEN"
+2022101700,2022,6,10/17/2022,20:15:00,LAC,DEN,21,17
+
+$ grep "LAC" games.csv | grep "DEN"
+2022101700,2022,6,"10/17/2022","20:15:00","LAC","DEN",19,16
+
+Answer:
+Original score (games.csv):  LAC 19, DEN 16
+Modified score (games2.csv): LAC 21, DEN 17
